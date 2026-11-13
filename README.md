@@ -8,6 +8,7 @@ Free sound packs for **Rap Studio**. The app reads `index.json` and downloads pa
 | Drill Kit | UK / NY drill, 140-145 BPM | 10 |
 | Detroit Kit | Detroit rap, 90-100 BPM | 8 |
 | Boom Bap Kit | Boom bap, 85-95 BPM | 8 |
+| Phonk Kit | Phonk / drift phonk, 130-160 BPM | 14 |
 
 Every sound was synthesized from scratch for Rap Studio. Nothing is sampled from songs, games or other
 sound packs. All sounds are released under **CC0 1.0**: use them in any music, free or paid, no credit needed.

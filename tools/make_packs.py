@@ -227,6 +227,38 @@ def vinyl_crackle(length=2.0):
     return finish(x, 0.5)
 
 
+# ---------- phonk ----------
+def cowbell(f1=562, f2=845, length=0.45, drive=2.5, tail=0.16, crush_bits=None):
+    """Drum-machine cowbell: two square waves, band-passed, a sharp hit and a ring; driven like phonk."""
+    t = t_axis(length)
+    sq = np.sign(np.sin(2 * np.pi * f1 * t)) + np.sign(np.sin(2 * np.pi * f2 * t))
+    tone = filt(filt(sq, "bandpass", (1200, 3800)), "highpass", 450)
+    env = attack(t, 0.0008) * (0.65 * env_exp(t, 0.018) + 0.35 * env_exp(t, tail))
+    x = sat(tone * env * 2.0, drive)
+    if crush_bits:
+        q = 2 ** (crush_bits - 1)
+        x = np.round(x * q) / q
+    return finish(x)
+
+def vox_chop(f0=180, vowel="ah", length=0.45, drop=0.0, grit=1.5):
+    """A sung-sounding vocal chop built from a buzzy source and vowel formants (no recorded voice)."""
+    formants = {"ah": (800, 1150, 2900), "oh": (450, 800, 2830), "eh": (530, 1840, 2480), "uh": (640, 1190, 2390)}[vowel]
+    t = t_axis(length)
+    f = f0 * (1 - drop * np.clip(t / length, 0, 1))
+    phase = np.cumsum(f) / SR
+    source = 2 * (phase % 1.0) - 1  # saw
+    vib = 1 + 0.01 * np.sin(2 * np.pi * 5.5 * t)
+    source = source * vib
+    x = sum(filt(source, "bandpass", (fc * 0.85, fc * 1.15)) * g for fc, g in zip(formants, (1.0, 0.6, 0.25)))
+    env = attack(t, 0.01) * np.clip((length - t) / 0.06, 0, 1)
+    return finish(sat(x * env * 3, grit))
+
+def reverse_crash(length=1.6):
+    t = t_axis(length)
+    x = filt(noise(len(t)) + 0.5 * metal(t, 2.3), "highpass", 4000) * env_exp(t, 0.5)
+    return finish(x[::-1])
+
+
 # ---------- the packs ----------
 PACKS = [
     {
@@ -297,6 +329,27 @@ PACKS = [
             ("Pad Soul", "Melodic", lambda: pad_stab((57, 60, 64, 67))),
             ("Vinyl Crackle", "FX", vinyl_crackle),
             ("Tom Low", "Perc", lambda: tom(f=95)),
+        ],
+    },
+    {
+        "id": "phonk-kit", "name": "Phonk Kit", "style": "Phonk / drift phonk", "tempo": "130-160 BPM",
+        "description": "Driven cowbells to play melodies with, clipped and sliding 808s, hard kicks, "
+                       "original synthetic vocal chops and a reverse crash.",
+        "sounds": [
+            ("Cowbell Classic", "Melodic", lambda: cowbell()),
+            ("Cowbell Dirty", "Melodic", lambda: cowbell(drive=6.0, tail=0.22)),
+            ("Cowbell Crushed", "Melodic", lambda: cowbell(drive=4.0, crush_bits=5)),
+            ("Cowbell Low", "Melodic", lambda: cowbell(f1=420, f2=632, tail=0.2, drive=3.5)),
+            ("808 Clipped", "808", lambda: bass808(n=33, decay=1.0, drive=8.0, punch=2.5)),
+            ("808 Slide Phonk", "808", lambda: bass808(n=28, slide_to=40, slide_at=0.2, slide_len=0.12, drive=6.0)),
+            ("Kick Phonk", "Kick", lambda: kick(punch=200, base=50, decay=0.2, click=0.5, drive=4.0)),
+            ("Snare Phonk", "Snare", lambda: snare(body_f=200, tone=0.6, noise_amt=0.9, tau_noise=0.15, drive=2.5)),
+            ("Clap Phonk", "Clap", lambda: clap(tail=0.2)),
+            ("Hat Phonk", "Hi-Hat", lambda: hat(decay=0.025, length=0.12, hp=8000)),
+            ("Vox Chop Ah", "Vocal", lambda: vox_chop(f0=196, vowel="ah")),
+            ("Vox Chop Oh", "Vocal", lambda: vox_chop(f0=147, vowel="oh", length=0.6, drop=0.15)),
+            ("Vox Chop Hey", "Vocal", lambda: vox_chop(f0=220, vowel="eh", length=0.25, grit=3.0)),
+            ("Reverse Crash", "FX", reverse_crash),
         ],
     },
 ]

@@ -357,6 +357,114 @@
         }
       ],
       "bytes": 489860
+    },
+    {
+      "id": "phonk-kit",
+      "name": "Phonk Kit",
+      "style": "Phonk / drift phonk",
+      "tempo": "130-160 BPM",
+      "description": "Driven cowbells to play melodies with, clipped and sliding 808s, hard kicks, original synthetic vocal chops and a reverse crash.",
+      "sounds": [
+        {
+          "name": "Cowbell Classic",
+          "category": "Melodic",
+          "file": "packs/phonk-kit/cowbell-classic.wav",
+          "bytes": 39734,
+          "seconds": 0.45
+        },
+        {
+          "name": "Cowbell Dirty",
+          "category": "Melodic",
+          "file": "packs/phonk-kit/cowbell-dirty.wav",
+          "bytes": 39734,
+          "seconds": 0.45
+        },
+        {
+          "name": "Cowbell Crushed",
+          "category": "Melodic",
+          "file": "packs/phonk-kit/cowbell-crushed.wav",
+          "bytes": 39734,
+          "seconds": 0.45
+        },
+        {
+          "name": "Cowbell Low",
+          "category": "Melodic",
+          "file": "packs/phonk-kit/cowbell-low.wav",
+          "bytes": 39734,
+          "seconds": 0.45
+        },
+        {
+          "name": "808 Clipped",
+          "category": "808",
+          "file": "packs/phonk-kit/808-clipped.wav",
+          "bytes": 141164,
+          "seconds": 1.6
+        },
+        {
+          "name": "808 Slide Phonk",
+          "category": "808",
+          "file": "packs/phonk-kit/808-slide-phonk.wav",
+          "bytes": 141164,
+          "seconds": 1.6
+        },
+        {
+          "name": "Kick Phonk",
+          "category": "Kick",
+          "file": "packs/phonk-kit/kick-phonk.wav",
+          "bytes": 52964,
+          "seconds": 0.6
+        },
+        {
+          "name": "Snare Phonk",
+          "category": "Snare",
+          "file": "packs/phonk-kit/snare-phonk.wav",
+          "bytes": 30912,
+          "seconds": 0.35
+        },
+        {
+          "name": "Clap Phonk",
+          "category": "Clap",
+          "file": "packs/phonk-kit/clap-phonk.wav",
+          "bytes": 44144,
+          "seconds": 0.5
+        },
+        {
+          "name": "Hat Phonk",
+          "category": "Hi-Hat",
+          "file": "packs/phonk-kit/hat-phonk.wav",
+          "bytes": 10628,
+          "seconds": 0.12
+        },
+        {
+          "name": "Vox Chop Ah",
+          "category": "Vocal",
+          "file": "packs/phonk-kit/vox-chop-ah.wav",
+          "bytes": 39734,
+          "seconds": 0.45
+        },
+        {
+          "name": "Vox Chop Oh",
+          "category": "Vocal",
+          "file": "packs/phonk-kit/vox-chop-oh.wav",
+          "bytes": 52964,
+          "seconds": 0.6
+        },
+        {
+          "name": "Vox Chop Hey",
+          "category": "Vocal",
+          "file": "packs/phonk-kit/vox-chop-hey.wav",
+          "bytes": 22094,
+          "seconds": 0.25
+        },
+        {
+          "name": "Reverse Crash",
+          "category": "FX",
+          "file": "packs/phonk-kit/reverse-crash.wav",
+          "bytes": 141164,
+          "seconds": 1.6
+        }
+      ],
+      "bytes": 835868
     }
   ]
 }
