@@ -1,0 +1,362 @@
+{
+  "version": 1,
+  "name": "Rap Studio Sound Store",
+  "license": "CC0 1.0: free to use in any music, no credit needed",
+  "packs": [
+    {
+      "id": "dota-rap-kit",
+      "name": "Dota Rap Kit",
+      "style": "Dota rap / drill-adjacent",
+      "tempo": "140-150 BPM",
+      "description": "Grimy, drill-adjacent kit for Dota rap: bulbous 808s, flat kicks, dull papery snares, sandpaper percussion, dark bells and original spell FX.",
+      "sounds": [
+        {
+          "name": "Kick Flat",
+          "category": "Kick",
+          "file": "packs/dota-rap-kit/kick-flat.wav",
+          "bytes": 52964,
+          "seconds": 0.6
+        },
+        {
+          "name": "Kick Thump",
+          "category": "Kick",
+          "file": "packs/dota-rap-kit/kick-thump.wav",
+          "bytes": 52964,
+          "seconds": 0.6
+        },
+        {
+          "name": "808 Bulb",
+          "category": "808",
+          "file": "packs/dota-rap-kit/808-bulb.wav",
+          "bytes": 141164,
+          "seconds": 1.6
+        },
+        {
+          "name": "808 Slide Up",
+          "category": "808",
+          "file": "packs/dota-rap-kit/808-slide-up.wav",
+          "bytes": 141164,
+          "seconds": 1.6
+        },
+        {
+          "name": "808 Slide Down",
+          "category": "808",
+          "file": "packs/dota-rap-kit/808-slide-down.wav",
+          "bytes": 141164,
+          "seconds": 1.6
+        },
+        {
+          "name": "808 Grit",
+          "category": "808",
+          "file": "packs/dota-rap-kit/808-grit.wav",
+          "bytes": 141164,
+          "seconds": 1.6
+        },
+        {
+          "name": "Snare Dull",
+          "category": "Snare",
+          "file": "packs/dota-rap-kit/snare-dull.wav",
+          "bytes": 30912,
+          "seconds": 0.35
+        },
+        {
+          "name": "Snare Paper",
+          "category": "Snare",
+          "file": "packs/dota-rap-kit/snare-paper.wav",
+          "bytes": 30912,
+          "seconds": 0.35
+        },
+        {
+          "name": "Rim Dry",
+          "category": "Perc",
+          "file": "packs/dota-rap-kit/rim-dry.wav",
+          "bytes": 10628,
+          "seconds": 0.12
+        },
+        {
+          "name": "Sand Shaker",
+          "category": "Perc",
+          "file": "packs/dota-rap-kit/sand-shaker.wav",
+          "bytes": 15920,
+          "seconds": 0.18
+        },
+        {
+          "name": "Grit Perc",
+          "category": "Perc",
+          "file": "packs/dota-rap-kit/grit-perc.wav",
+          "bytes": 10628,
+          "seconds": 0.12
+        },
+        {
+          "name": "Hat Dark",
+          "category": "Hi-Hat",
+          "file": "packs/dota-rap-kit/hat-dark.wav",
+          "bytes": 17684,
+          "seconds": 0.2
+        },
+        {
+          "name": "Open Hat Dark",
+          "category": "Hi-Hat",
+          "file": "packs/dota-rap-kit/open-hat-dark.wav",
+          "bytes": 70604,
+          "seconds": 0.8
+        },
+        {
+          "name": "Bell Dark",
+          "category": "Melodic",
+          "file": "packs/dota-rap-kit/bell-dark.wav",
+          "bytes": 176444,
+          "seconds": 2.0
+        },
+        {
+          "name": "Pluck Dead",
+          "category": "Melodic",
+          "file": "packs/dota-rap-kit/pluck-dead.wav",
+          "bytes": 79424,
+          "seconds": 0.9
+        },
+        {
+          "name": "FX Spell Cast",
+          "category": "FX",
+          "file": "packs/dota-rap-kit/fx-spell-cast.wav",
+          "bytes": 123522,
+          "seconds": 1.4
+        },
+        {
+          "name": "FX Blink",
+          "category": "FX",
+          "file": "packs/dota-rap-kit/fx-blink.wav",
+          "bytes": 30912,
+          "seconds": 0.35
+        },
+        {
+          "name": "FX Arcane Hit",
+          "category": "FX",
+          "file": "packs/dota-rap-kit/fx-arcane-hit.wav",
+          "bytes": 141164,
+          "seconds": 1.6
+        },
+        {
+          "name": "FX Whoosh",
+          "category": "FX",
+          "file": "packs/dota-rap-kit/fx-whoosh.wav",
+          "bytes": 79424,
+          "seconds": 0.9
+        }
+      ],
+      "bytes": 1488762
+    },
+    {
+      "id": "drill-kit",
+      "name": "Drill Kit",
+      "style": "UK / NY drill",
+      "tempo": "140-145 BPM",
+      "description": "Sliding 808s, crisp drill snares, bouncy hats and percs.",
+      "sounds": [
+        {
+          "name": "Kick Punch",
+          "category": "Kick",
+          "file": "packs/drill-kit/kick-punch.wav",
+          "bytes": 52964,
+          "seconds": 0.6
+        },
+        {
+          "name": "808 Slide A",
+          "category": "808",
+          "file": "packs/drill-kit/808-slide-a.wav",
+          "bytes": 141164,
+          "seconds": 1.6
+        },
+        {
+          "name": "808 Slide B",
+          "category": "808",
+          "file": "packs/drill-kit/808-slide-b.wav",
+          "bytes": 141164,
+          "seconds": 1.6
+        },
+        {
+          "name": "808 Long",
+          "category": "808",
+          "file": "packs/drill-kit/808-long.wav",
+          "bytes": 194084,
+          "seconds": 2.2
+        },
+        {
+          "name": "Snare Drill",
+          "category": "Snare",
+          "file": "packs/drill-kit/snare-drill.wav",
+          "bytes": 30912,
+          "seconds": 0.35
+        },
+        {
+          "name": "Clap Tight",
+          "category": "Clap",
+          "file": "packs/drill-kit/clap-tight.wav",
+          "bytes": 44144,
+          "seconds": 0.5
+        },
+        {
+          "name": "Hat Tick",
+          "category": "Hi-Hat",
+          "file": "packs/drill-kit/hat-tick.wav",
+          "bytes": 10628,
+          "seconds": 0.12
+        },
+        {
+          "name": "Open Hat",
+          "category": "Hi-Hat",
+          "file": "packs/drill-kit/open-hat.wav",
+          "bytes": 61782,
+          "seconds": 0.7
+        },
+        {
+          "name": "Perc Wood",
+          "category": "Perc",
+          "file": "packs/drill-kit/perc-wood.wav",
+          "bytes": 15920,
+          "seconds": 0.18
+        },
+        {
+          "name": "Shaker",
+          "category": "Perc",
+          "file": "packs/drill-kit/shaker.wav",
+          "bytes": 15920,
+          "seconds": 0.18
+        }
+      ],
+      "bytes": 708682
+    },
+    {
+      "id": "detroit-kit",
+      "name": "Detroit Kit",
+      "style": "Detroit rap",
+      "tempo": "90-100 BPM",
+      "description": "Knocking kicks, hard claps, fast hats and piano stabs.",
+      "sounds": [
+        {
+          "name": "Kick Knock",
+          "category": "Kick",
+          "file": "packs/detroit-kit/kick-knock.wav",
+          "bytes": 52964,
+          "seconds": 0.6
+        },
+        {
+          "name": "Snare Hard",
+          "category": "Snare",
+          "file": "packs/detroit-kit/snare-hard.wav",
+          "bytes": 30912,
+          "seconds": 0.35
+        },
+        {
+          "name": "Clap Wide",
+          "category": "Clap",
+          "file": "packs/detroit-kit/clap-wide.wav",
+          "bytes": 44144,
+          "seconds": 0.5
+        },
+        {
+          "name": "Hat Fast",
+          "category": "Hi-Hat",
+          "file": "packs/detroit-kit/hat-fast.wav",
+          "bytes": 8864,
+          "seconds": 0.1
+        },
+        {
+          "name": "808 Short",
+          "category": "808",
+          "file": "packs/detroit-kit/808-short.wav",
+          "bytes": 61782,
+          "seconds": 0.7
+        },
+        {
+          "name": "Piano Stab Minor",
+          "category": "Melodic",
+          "file": "packs/detroit-kit/piano-stab-minor.wav",
+          "bytes": 105884,
+          "seconds": 1.2
+        },
+        {
+          "name": "Piano Stab Dark",
+          "category": "Melodic",
+          "file": "packs/detroit-kit/piano-stab-dark.wav",
+          "bytes": 105884,
+          "seconds": 1.2
+        },
+        {
+          "name": "Brass Stab",
+          "category": "Melodic",
+          "file": "packs/detroit-kit/brass-stab.wav",
+          "bytes": 61782,
+          "seconds": 0.7
+        }
+      ],
+      "bytes": 472216
+    },
+    {
+      "id": "boom-bap-kit",
+      "name": "Boom Bap Kit",
+      "style": "Boom bap",
+      "tempo": "85-95 BPM",
+      "description": "Dusty kicks, cracking snares, vinyl hats and crackle.",
+      "sounds": [
+        {
+          "name": "Kick Dusty",
+          "category": "Kick",
+          "file": "packs/boom-bap-kit/kick-dusty.wav",
+          "bytes": 52964,
+          "seconds": 0.6
+        },
+        {
+          "name": "Snare Crack",
+          "category": "Snare",
+          "file": "packs/boom-bap-kit/snare-crack.wav",
+          "bytes": 30912,
+          "seconds": 0.35
+        },
+        {
+          "name": "Rim Wood",
+          "category": "Perc",
+          "file": "packs/boom-bap-kit/rim-wood.wav",
+          "bytes": 10628,
+          "seconds": 0.12
+        },
+        {
+          "name": "Hat Vinyl",
+          "category": "Hi-Hat",
+          "file": "packs/boom-bap-kit/hat-vinyl.wav",
+          "bytes": 17684,
+          "seconds": 0.2
+        },
+        {
+          "name": "Shaker Soft",
+          "category": "Perc",
+          "file": "packs/boom-bap-kit/shaker-soft.wav",
+          "bytes": 15920,
+          "seconds": 0.18
+        },
+        {
+          "name": "Pad Soul",
+          "category": "Melodic",
+          "file": "packs/boom-bap-kit/pad-soul.wav",
+          "bytes": 141164,
+          "seconds": 1.6
+        },
+        {
+          "name": "Vinyl Crackle",
+          "category": "FX",
+          "file": "packs/boom-bap-kit/vinyl-crackle.wav",
+          "bytes": 176444,
+          "seconds": 2.0
+        },
+        {
+          "name": "Tom Low",
+          "category": "Perc",
+          "file": "packs/boom-bap-kit/tom-low.wav",
+          "bytes": 44144,
+          "seconds": 0.5
+        }
+      ],
+      "bytes": 489860
+    }
+  ]
+}
