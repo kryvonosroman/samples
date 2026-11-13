@@ -33,6 +33,11 @@ sounds into your Browser. Check each kit's licence before releasing a song.
 | DRIFT Phonk Drum Kit | VILARCORP | about EUR 5 |
 | Rage Phonk Drum Kit | drumkit | EUR 5+ |
 
+## Free plugins (links only)
+
+`plugins` in `index.json` lists free VST3 / AU plugins that work in Rap Studio (Vital, Surge XT, Spitfire LABS,
+Graillon, Valhalla Supermassive, OTT, TDR Nova and more). The store's Free plugins tab opens each maker's page.
+
 ## Adding a pack
 
 1. Put the WAV files in `packs/<pack-id>/`.

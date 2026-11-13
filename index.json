@@ -779,5 +779,161 @@
       "description": "474 sounds in 13 folders, including lots of cowbells.",
       "link": "https://drumkit.gumroad.com/l/Rage"
     }
+  ],
+  "plugins": [
+    {
+      "id": "vital",
+      "name": "Vital",
+      "maker": "Vital Audio",
+      "price": "Free",
+      "license": "",
+      "style": "Synth (VST3, AU)",
+      "tempo": "",
+      "description": "Wavetable synth for leads, plucks, bells and pads. The most recommended free synth.",
+      "link": "https://vital.audio/"
+    },
+    {
+      "id": "surge-xt",
+      "name": "Surge XT",
+      "maker": "Surge Synth Team",
+      "price": "Free",
+      "license": "",
+      "style": "Synth (VST3, AU)",
+      "tempo": "",
+      "description": "Open-source synth with thousands of presets and no paid tier.",
+      "link": "https://surge-synthesizer.github.io/"
+    },
+    {
+      "id": "odin-2",
+      "name": "Odin 2",
+      "maker": "TheWaveWarden",
+      "price": "Free",
+      "license": "",
+      "style": "Synth (VST3, AU)",
+      "tempo": "",
+      "description": "Strong free synth for basses and leads.",
+      "link": "https://thewavewarden.com/pages/odin-2"
+    },
+    {
+      "id": "spitfire-labs",
+      "name": "Spitfire LABS",
+      "maker": "Spitfire Audio",
+      "price": "Free",
+      "license": "",
+      "style": "Instruments (VST3, AU)",
+      "tempo": "",
+      "description": "Free pianos, strings and pads: sad zxc melodies and dark drill strings.",
+      "link": "https://labs.spitfireaudio.com/"
+    },
+    {
+      "id": "decent-sampler",
+      "name": "Decent Sampler",
+      "maker": "Decent Samples",
+      "price": "Free",
+      "license": "",
+      "style": "Sampler (VST3, AU)",
+      "tempo": "",
+      "description": "Plays the many free instruments made for it.",
+      "link": "https://www.decentsamples.com/product/decent-sampler-plugin/"
+    },
+    {
+      "id": "graillon",
+      "name": "Graillon 3 Free Edition",
+      "maker": "Auburn Sounds",
+      "price": "Free",
+      "license": "",
+      "style": "Pitch correction (VST3, AU)",
+      "tempo": "",
+      "description": "Live auto-tune while you record.",
+      "link": "https://www.auburnsounds.com/products/Graillon.html"
+    },
+    {
+      "id": "mautopitch",
+      "name": "MAutoPitch",
+      "maker": "MeldaProduction",
+      "price": "Free",
+      "license": "",
+      "style": "Pitch correction (VST3, AU)",
+      "tempo": "",
+      "description": "Auto-tune with speed control, plus width and a limiter.",
+      "link": "https://www.meldaproduction.com/MAutoPitch"
+    },
+    {
+      "id": "supermassive",
+      "name": "Valhalla Supermassive",
+      "maker": "Valhalla DSP",
+      "price": "Free",
+      "license": "",
+      "style": "Reverb and delay (VST3, AU)",
+      "tempo": "",
+      "description": "Huge spaces and echoes on vocals and bells.",
+      "link": "https://valhalladsp.com/shop/reverb/valhalla-supermassive/"
+    },
+    {
+      "id": "ott",
+      "name": "OTT",
+      "maker": "Xfer Records",
+      "price": "Free",
+      "license": "",
+      "style": "Multiband compressor (VST3, AU)",
+      "tempo": "",
+      "description": "The loud, in-your-face sound on drums and synths.",
+      "link": "https://xferrecords.com/freeware"
+    },
+    {
+      "id": "tdr-nova",
+      "name": "TDR Nova",
+      "maker": "Tokyo Dawn Labs",
+      "price": "Free",
+      "license": "",
+      "style": "Dynamic EQ (VST3, AU)",
+      "tempo": "",
+      "description": "Cut harsh vocal spikes only when they jump out.",
+      "link": "https://www.tokyodawn.net/tdr-nova/"
+    },
+    {
+      "id": "tdr-kotelnikov",
+      "name": "TDR Kotelnikov",
+      "maker": "Tokyo Dawn Labs",
+      "price": "Free",
+      "license": "",
+      "style": "Bus compressor (VST3, AU)",
+      "tempo": "",
+      "description": "Glue on the drum bus or the master.",
+      "link": "https://www.tokyodawn.net/tdr-kotelnikov/"
+    },
+    {
+      "id": "tdr-molotok",
+      "name": "TDR Molotok",
+      "maker": "Tokyo Dawn Labs",
+      "price": "Free",
+      "license": "",
+      "style": "Character compressor (VST3, AU)",
+      "tempo": "",
+      "description": "Punchy drums and thick vocals.",
+      "link": "https://www.tokyodawn.net/tdr-molotok/"
+    },
+    {
+      "id": "span",
+      "name": "SPAN",
+      "maker": "Voxengo",
+      "price": "Free",
+      "license": "",
+      "style": "Spectrum analyser (VST3, AU)",
+      "tempo": "",
+      "description": "See where the 808, kick and vocal sit.",
+      "link": "https://www.voxengo.com/product/span/"
+    },
+    {
+      "id": "youlean",
+      "name": "Youlean Loudness Meter 2",
+      "maker": "Youlean",
+      "price": "Free",
+      "license": "",
+      "style": "Loudness meter (VST3, AU)",
+      "tempo": "",
+      "description": "Check LUFS and true peak against streaming targets.",
+      "link": "https://youlean.co/youlean-loudness-meter/"
+    }
   ]
 }
