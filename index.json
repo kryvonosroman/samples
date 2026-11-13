@@ -689,5 +689,95 @@
       ],
       "bytes": 1479046
     }
+  ],
+  "links": [
+    {
+      "id": "bvker-lunatic-phonk",
+      "name": "Lunatic Phonk",
+      "maker": "BVKER",
+      "price": "Free",
+      "license": "royalty-free",
+      "style": "Phonk drum kit",
+      "tempo": "130 BPM",
+      "description": "Tuned 808s, cowbells, kicks, dirty snares, hats, FX and melody loops (64 files) taken from BVKER's paid phonk libraries.",
+      "link": "https://bvker.com/free-phonk-drum-kit/"
+    },
+    {
+      "id": "vivivi-phonk-drum-kit",
+      "name": "VIVIVI Phonk Drum Kit",
+      "maker": "VIVIVI",
+      "price": "Free",
+      "license": "check the kit's readme",
+      "style": "Memphis phonk drums",
+      "tempo": "",
+      "description": "42 dark Memphis-style sounds: 808s, kicks, snares, hi-hats and vocal samples.",
+      "link": "https://soundpacks.com/free-sound-packs/vivivi-phonk-drum-kit/"
+    },
+    {
+      "id": "looperman-phonk",
+      "name": "Looperman Phonk Loops",
+      "maker": "the Looperman community",
+      "price": "Free (account)",
+      "license": "royalty-free",
+      "style": "Phonk loops",
+      "tempo": "",
+      "description": "1,200+ free phonk loops: cowbell melodies, drift phonk drums, Memphis grooves. Download single loops, then add them here.",
+      "link": "https://www.looperman.com/loops/genres/free-phonk-loops-samples-sounds-wavs-download"
+    },
+    {
+      "id": "slooply-free-phonk",
+      "name": "Slooply Free Phonk Samples",
+      "maker": "Slooply",
+      "price": "Free",
+      "license": "check Slooply's licence page",
+      "style": "Phonk drums",
+      "tempo": "",
+      "description": "87 free phonk drum sounds with a lo-fi tape feel.",
+      "link": "https://slooply.com/collection/free-phonk-samples"
+    },
+    {
+      "id": "samplefocus-phonk-shots",
+      "name": "Phonk Drum Shots (SampleFocus)",
+      "maker": "GVLXY",
+      "price": "Free (account)",
+      "license": "royalty-free",
+      "style": "Phonk one-shots",
+      "tempo": "",
+      "description": "Phonk kicks, snares, hats and drift cowbells as single hits. Use Download All on the page.",
+      "link": "https://samplefocus.com/collections/phonk-drum-shots-kit"
+    },
+    {
+      "id": "bvker-reticence",
+      "name": "Reticence Phonk Drum Kit",
+      "maker": "BVKER",
+      "price": "About $5",
+      "license": "royalty-free, no credit needed",
+      "style": "Phonk drum kit",
+      "tempo": "",
+      "description": "500+ files: 350 drum hits, 40 tuned cowbells, 30 808s, melodies, MIDI and hoovers.",
+      "link": "https://www.adsrsounds.com/product/presets/bvker-reticence-phonk-drum-kit-trap-drum-samples/"
+    },
+    {
+      "id": "vilarcorp-drift",
+      "name": "DRIFT Phonk Drum Kit",
+      "maker": "VILARCORP",
+      "price": "About €5",
+      "license": "see the product page",
+      "style": "Drift phonk",
+      "tempo": "",
+      "description": "116 drift phonk sounds: deep 808s, crisp snares, percussion, vocal chops and FX.",
+      "link": "https://vilarcorp.gumroad.com/l/DRIFT"
+    },
+    {
+      "id": "rage-phonk",
+      "name": "Rage Phonk Drum Kit",
+      "maker": "drumkit",
+      "price": "€5+",
+      "license": "see the product page",
+      "style": "Phonk drum kit",
+      "tempo": "",
+      "description": "474 sounds in 13 folders, including lots of cowbells.",
+      "link": "https://drumkit.gumroad.com/l/Rage"
+    }
   ]
 }
