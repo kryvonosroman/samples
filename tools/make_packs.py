@@ -259,6 +259,117 @@ def reverse_crash(length=1.6):
     return finish(x[::-1])
 
 
+
+# ---------- zxc / memphis ----------
+def reverb(x, seconds=1.8, mix=0.3, dark=6000, seed=5):
+    """A simple room: convolve with decaying, filtered noise (no recorded impulse)."""
+    r = np.random.default_rng(seed)
+    n = int(seconds * SR)
+    t = np.arange(n) / SR
+    ir = r.uniform(-1, 1, n) * np.exp(-t / (seconds / 5.0))
+    ir = filt(ir, "lowpass", dark)
+    ir /= np.sqrt(np.sum(ir ** 2)) + 1e-9
+    wet = np.convolve(x, ir)[: len(x) + n // 2]
+    dry = np.concatenate([x, np.zeros(len(wet) - len(x))])
+    return dry * (1 - mix) + wet * mix * 0.6
+
+def chorus(x, depth_ms=3.0, rate=0.6):
+    n = len(x)
+    t = np.arange(n) / SR
+    d = (depth_ms * 0.001 * SR) * (1 + np.sin(2 * np.pi * rate * t)) * 0.5 + 0.01 * SR
+    idx = np.clip(np.arange(n) - d, 0, n - 1)
+    i0 = idx.astype(int); fr = idx - i0
+    i1 = np.minimum(i0 + 1, n - 1)
+    return 0.7 * x + 0.5 * (x[i0] * (1 - fr) + x[i1] * fr)
+
+def string_pluck(freq, length, decay=0.996, bright=3500, seed=0):
+    """Karplus-Strong guitar string."""
+    r = np.random.default_rng(seed)
+    n = int(length * SR)
+    period = max(2, int(round(SR / freq)))
+    line = filt(r.uniform(-1, 1, period * 4), "lowpass", bright)[-period:]
+    out = np.zeros(n)
+    last = 0.0
+    buf = list(line)
+    for i in range(n):
+        k = i % period
+        y = buf[k]
+        buf[k] = decay * 0.5 * (y + last)
+        last = y
+        out[i] = y
+    return out
+
+def guitar_loop(notes, bpm=140, bars=2, step=2, length_each=1.2, seed=1, lofi=True):
+    """An arpeggio loop: one note every `step` 16ths (MIDI notes), chorus, room, tape dulling."""
+    sixteenth = 60.0 / bpm / 4
+    total = int(bars * 16 * sixteenth * SR)
+    out = np.zeros(total + int(length_each * SR))
+    for i, n in enumerate(notes):
+        start = int(i * step * sixteenth * SR)
+        tone = string_pluck(note(n), length_each, seed=seed + i) * (0.9 if i % 4 == 0 else 0.7)
+        out[start:start + len(tone)] += tone
+    out = chorus(out)
+    out = reverb(out, 2.2, 0.35)
+    if lofi:
+        out = filt(out, "lowpass", 5200)
+        t = np.arange(len(out)) / SR
+        out *= 1 + 0.03 * np.sin(2 * np.pi * 0.5 * t)  # tape wobble in level
+    return finish(out[:total])
+
+def pad_loop(chords, bpm=140, bars_each=1, cutoff=1600, seed=2):
+    """Hazy saw pad, one chord per bar, lo-fi."""
+    bar = 60.0 / bpm * 4
+    n_each = int(bar * bars_each * SR)
+    out = []
+    for c in chords:
+        t = np.arange(n_each) / SR
+        x = np.zeros(n_each)
+        for m in c:
+            for det in (0.997, 1.003):
+                ph = (note(m) * det * t) % 1.0
+                x += 2 * ph - 1
+        env = np.minimum(1, t / 0.25) * np.minimum(1, (t[-1] - t + 1e-9) / 0.2)
+        out.append(x * env / (2 * len(c)))
+    x = filt(np.concatenate(out), "lowpass", cutoff)
+    x = reverb(x, 2.5, 0.4, dark=3000)
+    x = x + 0.01 * filt(noise(len(x)), "bandpass", (1000, 6000))  # tape hiss
+    return finish(x[: n_each * len(chords)])
+
+def vox_ooh(f0=220, length=1.2, vowel="oh", wet=0.45, seed=3):
+    x = vox_chop(f0=f0, vowel=vowel, length=length, grit=1.2)
+    x = reverb(x, 2.5, wet, dark=5000, seed=seed)
+    return finish(x)
+
+def tape_stop(length=1.2, f=110):
+    t = t_axis(length)
+    speed = np.clip(1 - t / length, 0, 1) ** 1.5
+    phase = np.cumsum(f * speed) / SR
+    x = np.sign(np.sin(2 * np.pi * phase)) * 0.4 + np.sin(2 * np.pi * phase * 0.5)
+    return finish(filt(x, "lowpass", 1500) * np.minimum(1, (length - t) / 0.05))
+
+def dusty(x, bits=8, cutoff=7000, drive=2.0):
+    x = sat(np.asarray(x), drive)
+    q = 2 ** (bits - 1)
+    x = np.round(x * q) / q
+    x = filt(x, "lowpass", cutoff)
+    return finish(x)
+
+def memphis_cowbell_loop(bpm=130, seed=4):
+    sixteenth = 60.0 / bpm / 4
+    pattern = [(0, 0), (3, 0), (6, 3), (8, 0), (10, 7), (12, 5), (14, 3),
+               (16, 0), (19, 0), (22, 3), (24, 8), (26, 7), (28, 5), (30, 3)]
+    total = int(32 * sixteenth * SR)
+    out = np.zeros(total + SR)
+    base = cowbell(drive=4.0, tail=0.2)
+    for step, semi in pattern:
+        ratio = 2 ** (semi / 12)
+        idx = np.arange(0, len(base) - 1, ratio)
+        shifted = np.interp(idx, np.arange(len(base)), base)
+        s0 = int(step * sixteenth * SR)
+        out[s0:s0 + len(shifted)] += shifted * 0.6
+    out = reverb(out, 1.2, 0.2)
+    return dusty(out[:total], bits=9, cutoff=8000, drive=1.5)
+
 # ---------- the packs ----------
 PACKS = [
     {
@@ -350,6 +461,49 @@ PACKS = [
             ("Vox Chop Oh", "Vocal", lambda: vox_chop(f0=147, vowel="oh", length=0.6, drop=0.15)),
             ("Vox Chop Hey", "Vocal", lambda: vox_chop(f0=220, vowel="eh", length=0.25, grit=3.0)),
             ("Reverse Crash", "FX", reverse_crash),
+        ],
+    },
+    {
+        "id": "zxc-kit", "name": "Zxc Kit", "style": "Zxc / emo-trap", "tempo": "140 BPM",
+        "description": "Melancholic guitar arpeggio loops, hazy pads and airy vocal chops in C minor, "
+                       "lo-fi drums and soft 808s. Loops are 2 bars at 140 BPM (use Loop to tempo: 8 beats).",
+        "sounds": [
+            ("Guitar Loop Cm-Ab 140", "Loop", lambda: guitar_loop([60, 63, 67, 72, 75, 72, 67, 63, 56, 60, 63, 68, 72, 68, 63, 60])),
+            ("Guitar Loop Eb-Bb 140", "Loop", lambda: guitar_loop([63, 67, 70, 75, 79, 75, 70, 67, 58, 62, 65, 70, 74, 70, 65, 62], seed=20)),
+            ("Guitar Loop Slow Cm 140", "Loop", lambda: guitar_loop([60, 67, 63, 70, 60, 67, 63, 72], step=4, length_each=2.0, seed=40)),
+            ("Pad Loop Cm-Ab 140", "Loop", lambda: pad_loop([(48, 55, 60, 63), (44, 51, 56, 60)])),
+            ("Pad Loop Eb-Bb 140", "Loop", lambda: pad_loop([(51, 58, 63, 67), (46, 53, 58, 62)])),
+            ("Guitar Note C", "Melodic", lambda: finish(reverb(chorus(string_pluck(note(60), 2.0, seed=7)), 2.0, 0.3))),
+            ("Vocal Ooh C", "Vocal", lambda: vox_ooh(f0=261.6, vowel="oh")),
+            ("Vocal Ah G", "Vocal", lambda: vox_ooh(f0=196.0, vowel="ah")),
+            ("Vocal Uh Eb", "Vocal", lambda: vox_ooh(f0=155.6, vowel="uh", length=1.6)),
+            ("808 Soft C", "808", lambda: bass808(n=36, length=2.0, decay=1.2, drive=1.6, punch=1.5)),
+            ("Kick Lo-Fi", "Kick", lambda: dusty(kick(punch=150, base=50, decay=0.25), bits=10, cutoff=6000)),
+            ("Snare Lo-Fi", "Snare", lambda: dusty(reverb(snare(body_f=190, tau_noise=0.12), 1.0, 0.25), bits=10, cutoff=7000)),
+            ("Hat Soft", "Hi-Hat", lambda: hat(decay=0.03, dark=8000)),
+            ("Reverse Guitar Swell", "FX", lambda: finish(guitar_loop([60, 63, 67, 72], step=1, bars=0.5, length_each=2.0, seed=60)[::-1])),
+            ("Tape Hiss", "FX", lambda: finish(filt(noise(int(4 * SR)), "bandpass", (800, 7000)), 0.25)),
+        ],
+    },
+    {
+        "id": "memphis-phonk-kit", "name": "Memphis Phonk Kit", "style": "Memphis phonk", "tempo": "120-135 BPM",
+        "description": "Dusty, dark and slow: bitcrushed drums, distorted cowbell loop and one-shots, eerie bells, "
+                       "low synthetic vocal chops and a tape stop. Original sounds.",
+        "sounds": [
+            ("Cowbell Loop 130", "Loop", lambda: memphis_cowbell_loop()),
+            ("Cowbell Dusty", "Melodic", lambda: dusty(cowbell(drive=5.0, tail=0.25), bits=7)),
+            ("Bell Eerie", "Melodic", lambda: finish(reverb(fm_bell(n=64, ratio=3.1, index=2.8, tau=1.2, dark=3500), 2.5, 0.35))),
+            ("Piano Stab Dark", "Melodic", lambda: dusty(piano_stab((48, 51, 55, 58)), bits=9, cutoff=4500, drive=1.4)),
+            ("808 Memphis", "808", lambda: dusty(bass808(n=31, length=1.8, decay=1.0, drive=4.0), bits=10, cutoff=5000, drive=2.5)),
+            ("Kick Dusty", "Kick", lambda: dusty(kick(punch=170, base=52, decay=0.2, click=0.5, drive=3.0), bits=8)),
+            ("Snare Dusty", "Snare", lambda: dusty(snare(body_f=210, tone=0.6, drive=2.0), bits=7, cutoff=6000)),
+            ("Clap Dusty", "Clap", lambda: dusty(clap(tail=0.16), bits=8, cutoff=6500)),
+            ("Hat Crunch", "Hi-Hat", lambda: dusty(hat(decay=0.03, length=0.12), bits=6, cutoff=9000)),
+            ("Open Hat Crunch", "Hi-Hat", lambda: dusty(hat(decay=0.2, length=0.6), bits=6, cutoff=8000)),
+            ("Vox Low Oh", "Vocal", lambda: dusty(vox_chop(f0=98, vowel="oh", length=0.7, drop=0.2, grit=2.5), bits=9, cutoff=5000)),
+            ("Vox Low Hey", "Vocal", lambda: dusty(vox_chop(f0=110, vowel="eh", length=0.3, grit=3.5), bits=8, cutoff=5000)),
+            ("Tape Stop", "FX", tape_stop),
+            ("Vinyl Dust", "FX", vinyl_crackle),
         ],
     },
 ]

@@ -465,6 +465,229 @@
         }
       ],
       "bytes": 835868
+    },
+    {
+      "id": "zxc-kit",
+      "name": "Zxc Kit",
+      "style": "Zxc / emo-trap",
+      "tempo": "140 BPM",
+      "description": "Melancholic guitar arpeggio loops, hazy pads and airy vocal chops in C minor, lo-fi drums and soft 808s. Loops are 2 bars at 140 BPM (use Loop to tempo: 8 beats).",
+      "sounds": [
+        {
+          "name": "Guitar Loop Cm-Ab 140",
+          "category": "Loop",
+          "file": "packs/zxc-kit/guitar-loop-cm-ab-140.wav",
+          "bytes": 302444,
+          "seconds": 3.43
+        },
+        {
+          "name": "Guitar Loop Eb-Bb 140",
+          "category": "Loop",
+          "file": "packs/zxc-kit/guitar-loop-eb-bb-140.wav",
+          "bytes": 302444,
+          "seconds": 3.43
+        },
+        {
+          "name": "Guitar Loop Slow Cm 140",
+          "category": "Loop",
+          "file": "packs/zxc-kit/guitar-loop-slow-cm-140.wav",
+          "bytes": 302444,
+          "seconds": 3.43
+        },
+        {
+          "name": "Pad Loop Cm-Ab 140",
+          "category": "Loop",
+          "file": "packs/zxc-kit/pad-loop-cm-ab-140.wav",
+          "bytes": 302444,
+          "seconds": 3.43
+        },
+        {
+          "name": "Pad Loop Eb-Bb 140",
+          "category": "Loop",
+          "file": "packs/zxc-kit/pad-loop-eb-bb-140.wav",
+          "bytes": 302444,
+          "seconds": 3.43
+        },
+        {
+          "name": "Guitar Note C",
+          "category": "Melodic",
+          "file": "packs/zxc-kit/guitar-note-c.wav",
+          "bytes": 264644,
+          "seconds": 3.0
+        },
+        {
+          "name": "Vocal Ooh C",
+          "category": "Vocal",
+          "file": "packs/zxc-kit/vocal-ooh-c.wav",
+          "bytes": 216134,
+          "seconds": 2.45
+        },
+        {
+          "name": "Vocal Ah G",
+          "category": "Vocal",
+          "file": "packs/zxc-kit/vocal-ah-g.wav",
+          "bytes": 216134,
+          "seconds": 2.45
+        },
+        {
+          "name": "Vocal Uh Eb",
+          "category": "Vocal",
+          "file": "packs/zxc-kit/vocal-uh-eb.wav",
+          "bytes": 251414,
+          "seconds": 2.85
+        },
+        {
+          "name": "808 Soft C",
+          "category": "808",
+          "file": "packs/zxc-kit/808-soft-c.wav",
+          "bytes": 176444,
+          "seconds": 2.0
+        },
+        {
+          "name": "Kick Lo-Fi",
+          "category": "Kick",
+          "file": "packs/zxc-kit/kick-lo-fi.wav",
+          "bytes": 52964,
+          "seconds": 0.6
+        },
+        {
+          "name": "Snare Lo-Fi",
+          "category": "Snare",
+          "file": "packs/zxc-kit/snare-lo-fi.wav",
+          "bytes": 75012,
+          "seconds": 0.85
+        },
+        {
+          "name": "Hat Soft",
+          "category": "Hi-Hat",
+          "file": "packs/zxc-kit/hat-soft.wav",
+          "bytes": 17684,
+          "seconds": 0.2
+        },
+        {
+          "name": "Reverse Guitar Swell",
+          "category": "FX",
+          "file": "packs/zxc-kit/reverse-guitar-swell.wav",
+          "bytes": 75644,
+          "seconds": 0.86
+        },
+        {
+          "name": "Tape Hiss",
+          "category": "FX",
+          "file": "packs/zxc-kit/tape-hiss.wav",
+          "bytes": 352844,
+          "seconds": 4.0
+        }
+      ],
+      "bytes": 3211138
+    },
+    {
+      "id": "memphis-phonk-kit",
+      "name": "Memphis Phonk Kit",
+      "style": "Memphis phonk",
+      "tempo": "120-135 BPM",
+      "description": "Dusty, dark and slow: bitcrushed drums, distorted cowbell loop and one-shots, eerie bells, low synthetic vocal chops and a tape stop. Original sounds.",
+      "sounds": [
+        {
+          "name": "Cowbell Loop 130",
+          "category": "Loop",
+          "file": "packs/memphis-phonk-kit/cowbell-loop-130.wav",
+          "bytes": 325704,
+          "seconds": 3.69
+        },
+        {
+          "name": "Cowbell Dusty",
+          "category": "Melodic",
+          "file": "packs/memphis-phonk-kit/cowbell-dusty.wav",
+          "bytes": 39734,
+          "seconds": 0.45
+        },
+        {
+          "name": "Bell Eerie",
+          "category": "Melodic",
+          "file": "packs/memphis-phonk-kit/bell-eerie.wav",
+          "bytes": 286694,
+          "seconds": 3.25
+        },
+        {
+          "name": "Piano Stab Dark",
+          "category": "Melodic",
+          "file": "packs/memphis-phonk-kit/piano-stab-dark.wav",
+          "bytes": 105884,
+          "seconds": 1.2
+        },
+        {
+          "name": "808 Memphis",
+          "category": "808",
+          "file": "packs/memphis-phonk-kit/808-memphis.wav",
+          "bytes": 158804,
+          "seconds": 1.8
+        },
+        {
+          "name": "Kick Dusty",
+          "category": "Kick",
+          "file": "packs/memphis-phonk-kit/kick-dusty.wav",
+          "bytes": 52964,
+          "seconds": 0.6
+        },
+        {
+          "name": "Snare Dusty",
+          "category": "Snare",
+          "file": "packs/memphis-phonk-kit/snare-dusty.wav",
+          "bytes": 30912,
+          "seconds": 0.35
+        },
+        {
+          "name": "Clap Dusty",
+          "category": "Clap",
+          "file": "packs/memphis-phonk-kit/clap-dusty.wav",
+          "bytes": 44144,
+          "seconds": 0.5
+        },
+        {
+          "name": "Hat Crunch",
+          "category": "Hi-Hat",
+          "file": "packs/memphis-phonk-kit/hat-crunch.wav",
+          "bytes": 10628,
+          "seconds": 0.12
+        },
+        {
+          "name": "Open Hat Crunch",
+          "category": "Hi-Hat",
+          "file": "packs/memphis-phonk-kit/open-hat-crunch.wav",
+          "bytes": 52964,
+          "seconds": 0.6
+        },
+        {
+          "name": "Vox Low Oh",
+          "category": "Vocal",
+          "file": "packs/memphis-phonk-kit/vox-low-oh.wav",
+          "bytes": 61782,
+          "seconds": 0.7
+        },
+        {
+          "name": "Vox Low Hey",
+          "category": "Vocal",
+          "file": "packs/memphis-phonk-kit/vox-low-hey.wav",
+          "bytes": 26504,
+          "seconds": 0.3
+        },
+        {
+          "name": "Tape Stop",
+          "category": "FX",
+          "file": "packs/memphis-phonk-kit/tape-stop.wav",
+          "bytes": 105884,
+          "seconds": 1.2
+        },
+        {
+          "name": "Vinyl Dust",
+          "category": "FX",
+          "file": "packs/memphis-phonk-kit/vinyl-dust.wav",
+          "bytes": 176444,
+          "seconds": 2.0
+        }
+      ],
+      "bytes": 1479046
     }
   ]
 }
